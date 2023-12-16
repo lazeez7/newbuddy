@@ -1,0 +1,220 @@
+.wrap_two {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrap_two a {
+  text-decoration: none;
+  color: black;
+  font-family: Rubik;
+  color: rgb(30, 27, 38);
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.wrap_two {
+  /* margin-top: 30px; */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.cards h1 {
+  margin-top: 60px;
+  font-family: Rubik;
+  color: #1e1b26;
+  font-weight: 100;
+}
+
+.cards_img img {
+  width: 250px;
+  margin-top: 60px;
+}
+
+.cards_detalis h6 {
+  color: rgba(30, 27, 38, 0.5);
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.cards_detalis h5 {
+  color: rgba(30, 27, 38, 0.8);
+  font-family: Rubik;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 30px 0 10px;
+}
+
+.box img {
+  background-color: yellow;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.box {
+  display: flex;
+  gap: 30px;
+  margin: 20px 0px;
+  align-items: center;
+}
+
+.box p {
+  color: #1e1b26;
+  font-family: Rubik;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.cards_detalis p {
+  color: rgba(30, 27, 38, 0.5);
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.box h6 {
+  color: #1e1b26;
+  font-family: Rubik;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.container h1 {
+  margin-top: 60px;
+  font-family: Rubik;
+  color: #1e1b26;
+  font-weight: 100;
+}
+
+.container_2 {
+  gap: 80px;
+}
+
+.flex {
+  gap: 35px;
+}
+
+.korzinka button {
+  border-radius: 50%;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.modal_block img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.modal_block {
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.btn {
+  align-items: center;
+}
+
+.modal-text h5 {
+  margin-top: 10px;
+  text-align: center;
+  color: #010400;
+  font-family: Rubik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  margin: 20px 0 30px;
+  opacity: 0.6;
+}
+
+.modal-text h4 {
+  color: #010400;
+  font-family: Rubik;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.modal-btn button {
+  background: #fdeb04;
+  border: none;
+  border-radius: 200px;
+  color: #010400;
+  font-family: Rubik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  height: 50px;
+  line-height: 19px;
+  text-align: center;
+  width: 215px;
+  cursor: pointer;
+}
+
+.modal-btn {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.close {
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  border: none;
+  cursor: pointer;
+  background-color: #fdeb04;
+}
+
+.wrapper {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 20px;
+}
+
+.main-card {
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+
+.price {
+  display: grid;
+}
+
+.header-main {
+  position: sticky;
+  transition: all 0.1s;
+  top: 0;
+  padding: 20px 0;
+  background-color: #fff;
+}
+
+.header-main.shadow {
+  box-shadow: 3px 12px 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+
