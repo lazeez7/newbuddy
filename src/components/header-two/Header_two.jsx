@@ -6,10 +6,18 @@ import Drawer from "react-modern-drawer";
 //import styles 👇
 import "react-modern-drawer/dist/index.css";
 import { AXIOS } from "../../utils";
-
-import ProductModal from '../modal/Modal'
+import { useCart } from "react-use-cart";
+import ProductModal from "../modal/Modal";
 
 const Header_two = () => {
+  const {
+    totalItems,
+    isEmpty,
+    removeItem,
+    emptyCart,
+    updateItemQuantity,
+    items,
+  } = useCart();
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
@@ -40,6 +48,8 @@ const Header_two = () => {
     AXIOS.get("/categories/").then(({ data }) => setCategories(data));
   }, []);
 
+  let total = 0;
+
   return (
     <>
       <div className="header-main">
@@ -61,34 +71,79 @@ const Header_two = () => {
               lockBackgroundScroll
             >
               <div className="modal_block">
-              <div onClick={toggleDrawer} className="back">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="25"
-            fill="currentColor"
-            class="bi bi-x-lg"
-            viewBox="0 0 16 16"
-          >
-            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-          </svg>
-        </div>
-                <img
-                  src="https://apexpizza.uz/static/media/pitsapart.d7047adf9bd1a887cbd4.png"
-                  alt=""
-                />
-                <div className="modal-text">
-                  <h4>Пока нет товаров</h4>
-                  <h5>
-                    Ваша корзина пуста, откройте «Меню» и выберите понравившийся
-                    товар.
-                  </h5>
+                <div onClick={toggleDrawer} className="back">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-x-lg"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                  </svg>
                 </div>
-                <div onClick={toggleDrawer} className="modal-btn">
-                  <a href="#novinki">
-                    <button>Меню</button>
-                  </a>
-                </div>
+                {isEmpty ? (
+                  <>
+                    <img
+                      src="https://apexpizza.uz/static/media/pitsapart.d7047adf9bd1a887cbd4.png"
+                      alt=""
+                    />
+                    <div className="modal-text">
+                      <h4>Пока нет товаров</h4>
+                      <h5>
+                        Ваша корзина пуста, откройте «Меню» и выберите
+                        понравившийся товар.
+                      </h5>
+                    </div>
+                    <div onClick={toggleDrawer} className="modal-btn">
+                      <a href="#novinki">
+                        <button>Меню</button>
+                      </a>
+                    </div>
+                  </>
+                ) : (
+                  <div className="use_cart_korzina">
+                    <button onClick={emptyCart}>korizna tozalash!</button>
+                    <div className="korzina_products">
+                      {items?.map((el) => {
+                        const priceCount = el.count * el.price;
+                        total += priceCount;
+                        if (el.count >= 1) {
+                          return (
+                            <div className="card">
+                              <img src={el.image} alt="" />
+                              <span>
+                                <h3>{el.name_ru}</h3>
+                                <p>{el.price}сум</p>
+                              </span>
+                              <div>
+                                <button
+                                  onClick={() =>
+                                    updateItemQuantity(el.id, el.count--)
+                                  }
+                                >
+                                  -
+                                </button>
+                                <h3>{el.count}</h3>
+                                <button
+                                  onClick={() =>
+                                    updateItemQuantity(el.id, el.count++)
+                                  }
+                                >
+                                  +
+                                </button>
+                              </div>
+                            </div>
+                          );
+                        } else {
+                          removeItem(el.id);
+                        }
+                      })}
+                    </div>
+                    <h4>obwiy summa: {total}сум</h4>
+                  </div>
+                )}
               </div>
             </Drawer>
             <div className="korzinka flex">
@@ -98,6 +153,7 @@ const Header_two = () => {
                   alt=""
                 />
               </button>
+              <sub>{totalItems}</sub>
             </div>
           </div>
         </div>
