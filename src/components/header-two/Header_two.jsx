@@ -58,6 +58,7 @@ const Header_two = () => {
               direction="right"
               className="bla bla bla"
               size={400}
+              lockBackgroundScroll
             >
               <div className="modal_block">
               <div onClick={toggleDrawer} className="back">
