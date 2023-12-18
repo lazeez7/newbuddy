@@ -3,13 +3,20 @@
   justify-content: space-evenly;
   align-items: center;
 }
-.wrap img {
-  width: 100%;
-}
 .card {
   display: flex;
   gap: 10px;
   align-items: center;
+}
+
+.imgg{
+  width: 110px;
+}
+.tel{
+  width: 70px;
+}
+.halal{
+  width: 50px;
 }
 
 .card:nth-child(1) a {
@@ -73,22 +80,18 @@
   align-items: flex-start;
 }
 
-.card:nth-child(4) {
-  margin-right: auto;
-}
 
-.card img {
-  width: 74px;
-}
+
+
 .card:nth-child(3) img {
   width: 35px;
 }
 
 .wrap {
-  display: grid;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin: 20px 0px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+ 
 }
 
 .container {

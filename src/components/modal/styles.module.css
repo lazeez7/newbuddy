@@ -1,0 +1,35 @@
+.modal img {
+  width: 250px;
+  height: 180px;
+  object-fit: contain;
+}
+
+.modal {
+  justify-content: start;
+  display: flex;
+  gap: 30px;
+}
+
+.modalproductdetalis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modalproductdetalis button {
+  height: 40px;
+  background-color: #fdeb04;
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+.modalproductdetalis span {
+  color: rgb(191, 189, 189);
+}
+
+.back{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
