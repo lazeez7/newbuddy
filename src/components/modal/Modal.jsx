@@ -2,6 +2,7 @@ import styles from "./styles.module.css";
 
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
+import { useCart } from "react-use-cart";
 
 const style = {
   position: "absolute",
@@ -17,6 +18,8 @@ const style = {
 };
 
 const ProductModal = ({ state, setState }) => {
+  const { addItem, getItem, removeItem } = useCart();
+  //useCart
   return (
     <Modal
       open={state.open}
@@ -46,7 +49,21 @@ const ProductModal = ({ state, setState }) => {
               мелкозернистая икра маса...
             </span>
             <p>от {state.data?.price.toLocaleString()} сум</p>
-            <button className={styles.modal_btn}>В Корзину</button>
+            {!getItem(state.data?.id) ? (
+              <button
+                className={styles.modal_btn}
+                onClick={() => addItem(state.data)}
+              >
+                В Корзину
+              </button>
+            ) : (
+              <button
+                className={styles.modal_btn_x}
+                onClick={() => removeItem(state.data?.id)}
+              >
+                Отменить
+              </button>
+            )}
           </div>
         </div>
       </Box>

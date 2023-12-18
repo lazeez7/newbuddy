@@ -23,6 +23,14 @@
   border-radius: 10px;
 }
 
+.modal_btn_x{
+  height: 40px;
+  background-color: crimson !important;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 10px;
+}
+
 .modalproductdetalis span {
   color: rgb(191, 189, 189);
 }
