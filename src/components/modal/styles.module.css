@@ -8,12 +8,21 @@
   justify-content: start;
   display: flex;
   gap: 30px;
+
+  
+}
+@media (max-width: 760px) {
+  .modal {
+    width: 100%;
+    flex-direction: column;
+  }
 }
 
 .modalproductdetalis {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 15px;
 }
 
 .modalproductdetalis button {
@@ -41,3 +50,6 @@
     right: 15px;
     cursor: pointer;
 }
+
+
+

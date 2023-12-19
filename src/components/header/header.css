@@ -7,14 +7,23 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  /* flex-direction: column; */
+  justify-content: center;
+  text-align: center;
 }
 
 .imgg{
   width: 110px;
 }
 .tel{
-  width: 70px;
+  width: 200px;
 }
+
+.tel img{
+    width: 40px;
+}
+
+
 .halal{
   width: 50px;
 }
@@ -91,7 +100,43 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* flex-wrap: wrap; */
+
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+
+
  
+}
+
+@media (max-width: 992px) {
+  /* .wrap {
+    grid-template-columns: repeat(3, 1fr);
+  } */
+  .wrap .card:nth-child(4) {
+    display: none;
+  }
+}
+@media (max-width: 770px) {
+  /* .wrap {
+    grid-template-columns: repeat(3, 1fr);
+  } */
+  .wrap .card {
+    padding: 0;
+    padding-top: 20px;
+  }
+  .wrap .card img {
+    height: 70px;
+  }
+  .wrap .card:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrap .card:nth-child(3) div {
+    display: none;
+  }
 }
 
 .container {

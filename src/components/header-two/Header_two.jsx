@@ -66,7 +66,7 @@ const Header_two = () => {
               open={isOpen}
               onClose={toggleDrawer}
               direction="right"
-              className="bla bla bla"
+              className="navbar-mobile"
               size={400}
               lockBackgroundScroll
             >
@@ -104,34 +104,36 @@ const Header_two = () => {
                   </>
                 ) : (
                   <div className="use_cart_korzina">
-                    <button onClick={emptyCart}>korizna tozalash!</button>
+                    <div className="clear-box">
+                    <button className="clear" onClick={emptyCart}>Очистить корзину</button>
+                    </div>
                     <div className="korzina_products">
                       {items?.map((el) => {
                         const priceCount = el.count * el.price;
                         total += priceCount;
                         if (el.count >= 1) {
                           return (
-                            <div className="card">
+                            <div className="card-modal">
                               <img src={el.image} alt="" />
-                              <span>
+                              <span className="sapn">
                                 <h3>{el.name_ru}</h3>
                                 <p>{el.price}сум</p>
                               </span>
-                              <div>
-                                <button
-                                  onClick={() =>
-                                    updateItemQuantity(el.id, el.count--)
-                                  }
-                                >
-                                  -
-                                </button>
-                                <h3>{el.count}</h3>
+                              <div className="plus">
                                 <button
                                   onClick={() =>
                                     updateItemQuantity(el.id, el.count++)
                                   }
                                 >
                                   +
+                                </button>
+                                <h3>{el.count}</h3>
+                                <button
+                                  onClick={() =>
+                                    updateItemQuantity(el.id, el.count--)
+                                  }
+                                >
+                                  -
                                 </button>
                               </div>
                             </div>
@@ -141,7 +143,10 @@ const Header_two = () => {
                         }
                       })}
                     </div>
-                    <h4>obwiy summa: {total}сум</h4>
+                    <div className="bottom">
+                    <h4>Total: {total}сум</h4>
+                    <button className="order">SALE</button>
+                    </div>
                   </div>
                 )}
               </div>

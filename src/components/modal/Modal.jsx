@@ -15,6 +15,7 @@ const style = {
   borderRadius: "8px",
   boxShadow: 24,
   p: 4,
+
 };
 
 const ProductModal = ({ state, setState }) => {
@@ -27,7 +28,7 @@ const ProductModal = ({ state, setState }) => {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <Box sx={style}>
+      <Box sx={style} className='modal-ultra'>
         <div onClick={() => setState(false)} className={styles.back}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
