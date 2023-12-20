@@ -46,8 +46,7 @@ const ProductModal = ({ state, setState }) => {
           <div className={styles.modalproductdetalis}>
             <h3>{state.data?.name_ru}</h3>
             <span>
-              Искреннее наслаждение вкусом. Обжаренные кубики лосося,
-              мелкозернистая икра маса...
+              {state.data?.definition_ru}
             </span>
             <p>от {state.data?.price.toLocaleString()} сум</p>
             {!getItem(state.data?.id) ? (

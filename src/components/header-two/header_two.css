@@ -358,9 +358,9 @@
   /* margin-left: 50px; */
 }
 
-.card{
+/* .card{ */
   /* justify-content: space-around; */
-}
+
 
 
 .use_cart_korzina {
@@ -441,6 +441,10 @@ width: 100%;
   text-align: center;
 }
 
+.card-modal:last-child {
+  margin-bottom: 100px;
+}
+
 .card-modal img {
   width: 100%;
   max-width: 140px;
@@ -518,4 +522,22 @@ width: 100%;
   }
 }
 
+
+.bottom h4{
+  color: #1e1b26;
+  font-family: Rubik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 19px;
+}
+
+.order{
+  color: #1e1b26;
+  font-family: Rubik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 19px;
+}
 

@@ -144,8 +144,8 @@ const Header_two = () => {
                       })}
                     </div>
                     <div className="bottom">
-                    <h4>Total: {total}сум</h4>
-                    <button className="order">SALE</button>
+                    <h4>Сумма заказа : {total}сум</h4>
+                    <button className="order">Оформить заказ</button>
                     </div>
                   </div>
                 )}
