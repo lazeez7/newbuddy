@@ -450,6 +450,8 @@
   width: 100%;
   background: #fff;
   text-align: center;
+
+  padding-bottom: 75px;
 }
 
 .use_cart_korzina h4 {
@@ -511,7 +513,7 @@
 }
 
 .card-modal:last-child {
-  margin-bottom: 100px;
+  margin-bottom: 240px;
 }
 
 .card-modal img {
@@ -550,7 +552,7 @@
 
 @media (max-width: 480px) {
   .card-modal:last-child {
-    margin-bottom: 170px;
+    margin-bottom: 240px;
   }
 
   .clear-box {
