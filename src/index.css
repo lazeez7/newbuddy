@@ -41,3 +41,15 @@ button{
   border: none;
   cursor: pointer;
 }
+
+
+
+.bg-blur {
+  backdrop-filter: blur(5px);
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  color: black !important;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: hsla(0, 0%, 100%, 0.4) !important;
+}

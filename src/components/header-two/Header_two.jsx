@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./header_two.css";
 // import component 👇
 import Drawer from "react-modern-drawer";
-
+import { GrCart } from "react-icons/gr";
 //import styles 👇
 import "react-modern-drawer/dist/index.css";
 import { AXIOS } from "../../utils";
 import { useCart } from "react-use-cart";
 import ProductModal from "../modal/Modal";
+import pizza from "../header-two/pizza.png";
+
 
 const Header_two = () => {
   const {
@@ -87,10 +89,7 @@ const Header_two = () => {
                 </div>
                 {isEmpty ? (
                   <>
-                    <img
-                      src="https://apexpizza.uz/static/media/pitsapart.d7047adf9bd1a887cbd4.png"
-                      alt=""
-                    />
+                    <img src={pizza} alt="" />
                     <div className="modal-text">
                       <h4>Пока нет товаров</h4>
                       <h5>
@@ -156,11 +155,11 @@ const Header_two = () => {
               </div>
             </Drawer>
             <div className="korzinka flex">
-              <button onClick={toggleDrawer}>
-                <img
-                  src="https://apexpizza.uz/static/media/korzinka-yellow-icon.336092f5a231762b5d5ff5360b1146e0.svg"
-                  alt=""
-                />
+              <button
+                className={totalItems > 0 ? "active" : "zero"}
+                onClick={toggleDrawer}
+              >
+                <GrCart size={"25"} />
               </button>
               <sub>{totalItems}</sub>
             </div>
@@ -181,6 +180,7 @@ const Header_two = () => {
                     <h5>{burger.name_ru}</h5>
                     <div className="box">
                       <button
+                        className="cart_btn"
                         onClick={() =>
                           setModalState({
                             open: true,
@@ -188,10 +188,7 @@ const Header_two = () => {
                           })
                         }
                       >
-                        <img
-                          src="https://apexpizza.uz/static/media/aIcon.b1db301914d6a331f19e40c04820688f.svg"
-                          alt=""
-                        />
+                        <GrCart size={"23px"} />
                       </button>
                       <h6 className="price">
                         от {burger.price.toLocaleString()} сум
