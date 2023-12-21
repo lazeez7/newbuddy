@@ -562,6 +562,7 @@
   }
   .navbar-mobile {
     width: 100% !important;
+    height: 100dvh;
   }
   .main-card {
     /* max-width: 240px; */

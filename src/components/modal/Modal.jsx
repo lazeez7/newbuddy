@@ -5,7 +5,7 @@ import Modal from "@mui/material/Modal";
 import { useCart } from "react-use-cart";
 import toast, { Toaster } from "react-hot-toast";
 
-const notify = () => toast("Produkt korzinaga qo'shildi!");
+const notify = () => toast("Товар добавился в Корзину");
 
 const style = {
   position: "absolute",
