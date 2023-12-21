@@ -137,6 +137,13 @@
   .wrap .card:nth-child(3) div {
     display: none;
   }
+  .wrap .card {
+    padding: 0;
+    padding-top: 10px;
+  }
+  .wrap .card img {
+    height: 50px;
+  }
 }
 
 .container {

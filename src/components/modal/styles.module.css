@@ -30,13 +30,16 @@
   background-color: #fdeb04;
   font-weight: 500;
   border-radius: 10px;
+  color: #000;
+  font-size: 14px;
 }
 
 .modal_btn_x{
   height: 40px;
   background-color: crimson !important;
-  color: #fff;
+  color: #fff !important;
   font-weight: 500;
+  font-size: 14px;
   border-radius: 10px;
 }
 

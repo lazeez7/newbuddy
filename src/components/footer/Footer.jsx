@@ -1,6 +1,6 @@
 import React from 'react'
-import gif from '../footer/icons8-instagram.gif'
 import "./footer.css"
+import insta from '../instagram.png'
 
 const Footer = () => {
   return (
@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="footer-item">
             <h1>Follow Us</h1>
             <a target='_blank' href="https://www.instagram.com/buddyburgeruz/">
-            <img className='icon' src={gif} alt="" />
+            <img className='icon' src={insta} alt="" />
             </a>
           </div>
         </div>

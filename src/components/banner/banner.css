@@ -8,3 +8,12 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
+@media (max-width: 1245px) {
+  .banner{
+    padding: 0 10px;
+  }
+  .banner img{
+    margin-top: 10px;
+  }
+}

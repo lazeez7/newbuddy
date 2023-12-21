@@ -33,6 +33,15 @@
   max-width: 250px;
   width: 100%;
   margin-top: 60px;
+  transition: all 0.5s;
+}
+
+.cards_img img:hover{
+  transform: translateY(-10px);
+}
+
+.main-card{
+  text-align: center;
 }
 
 .cards_detalis h6 {
@@ -66,6 +75,7 @@
   gap: 30px;
   margin: 20px 0px;
   align-items: center;
+  justify-content: center;
 }
 
 .box p {
@@ -95,7 +105,7 @@
   line-height: 24px;
 }
 
-.container h1 {
+#novinki h1 {
   margin-top: 60px;
   font-family: Rubik;
   color: #1e1b26;
@@ -200,6 +210,9 @@
   .wrapper {
     grid-template-columns: repeat(3, 1fr);
   }
+  #novinki h1{
+    margin-top: 40px;
+  }
 }
 @media (max-width: 768px) {
   .wrapper {
@@ -207,9 +220,25 @@
   }
 }
 @media (max-width: 480px) {
-  .wrapper {
-    grid-template-columns: repeat(1, 1fr);
+  
+  .cards_img img{
+    margin-top: 0;
+    height: 150px;
+    object-fit: contain;
   }
+
+
+  .cards_detalis h5{
+    font-size: 14px;
+    margin: 10px 0 10px;
+  }
+
+  .cards_detalis h6{
+    font-size: 14px;
+  }
+.box{
+  margin: 5px 0;
+}
 
   .wrapper .main-card {
     display: flex;
@@ -224,7 +253,7 @@
 .main-card {
   border: 1px solid lightgray;
   border-radius: 20px;
-  padding: 0 20px;
+  padding: 0;
 }
 
 .price {
@@ -426,8 +455,24 @@ width: 100%;
   background: #d7c902;
 }
 
+.plus h3{
+  font-weight: 400;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
 
-
+.plus button{
+  font-weight: 400;
+  font-size: 22px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
 
 
 
@@ -495,20 +540,31 @@ width: 100%;
 
 
 @media (max-width: 480px) {
+  .card-modal:last-child {
+    margin-bottom: 170px;
+  }
+  
+  .clear-box{
+    padding-bottom: 10px;
+  }
+  .box img{
+    width: 40px;
+    padding: 10px;
+  }
   .navbar-mobile{
     width: 100% !important;
   }
   .main-card {
-    max-width: 240px;
+    /* max-width: 240px; */
     width: 100%;
     margin: 0 auto;
   }
 
   .cards_img img {
-    max-width: 160px;
+    max-width: 160px; 
   }
   .main-card .box {
-    gap: 10px;
+    gap: 15px;
   }
   
 
@@ -519,7 +575,7 @@ width: 100%;
 
   .nav_two {
     overflow-x: scroll;
-    padding-bottom: 15px;
+    /* padding-bottom: 15px; */
   }
 }
 

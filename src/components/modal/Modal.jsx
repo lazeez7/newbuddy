@@ -52,7 +52,10 @@ const ProductModal = ({ state, setState }) => {
             {!getItem(state.data?.id) ? (
               <button
                 className={styles.modal_btn}
-                onClick={() => addItem(state.data)}
+                onClick={() => {
+                  addItem(state.data)
+                  setState(false)
+                }}
               >
                 В Корзину
               </button>

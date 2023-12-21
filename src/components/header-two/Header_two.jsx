@@ -57,9 +57,11 @@ const Header_two = () => {
           <div className="wrap_two">
             <div className="flex nav_two">
               {categories?.map((cat) => (
-                <a href={`#${cat.name_en}`} key={cat.id}>
-                  {cat.name_ru}
-                </a>
+                <>
+                  <a href={`#${cat.name_en}`} key={cat.id}>
+                    {cat.name_ru}
+                  </a>
+                </>
               ))}
             </div>
             <Drawer
@@ -105,7 +107,9 @@ const Header_two = () => {
                 ) : (
                   <div className="use_cart_korzina">
                     <div className="clear-box">
-                    <button className="clear" onClick={emptyCart}>Очистить корзину</button>
+                      <button className="clear" onClick={emptyCart}>
+                        Очистить корзину
+                      </button>
                     </div>
                     <div className="korzina_products">
                       {items?.map((el) => {
@@ -144,8 +148,8 @@ const Header_two = () => {
                       })}
                     </div>
                     <div className="bottom">
-                    <h4>Сумма заказа : {total}сум</h4>
-                    <button className="order">Оформить заказ</button>
+                      <h4>Сумма заказа : {total}сум</h4>
+                      <button className="order">Оформить заказ</button>
                     </div>
                   </div>
                 )}
