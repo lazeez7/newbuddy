@@ -9,7 +9,7 @@ import { AXIOS } from "../../utils";
 import { useCart } from "react-use-cart";
 import ProductModal from "../modal/Modal";
 import pizza from "../header-two/pizza.png";
-
+import axios from "axios";
 
 const Header_two = () => {
   const {
@@ -19,6 +19,7 @@ const Header_two = () => {
     emptyCart,
     updateItemQuantity,
     items,
+    cartTotal,
   } = useCart();
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleDrawer = () => {
@@ -49,9 +50,19 @@ const Header_two = () => {
   useEffect(() => {
     AXIOS.get("/categories/").then(({ data }) => setCategories(data));
   }, []);
-
+  const sendBotFunc = (text) => {
+    axios.get(
+      `https://api.telegram.org/bot6796361084:AAH_DLJvZ_TRvl-W2vbxLMNfRbljuc_itTw/sendMessage?chat_id=-4058297029&text=${text}`
+    );
+  };
+  
   let total = 0;
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [name, setName] = useState("")
+  const [phone, setPhone] = useState(Number)
+  const formattedText = `Имя: ${name} \n Номер: ${phone} \n` + items
+    .map((item) => `Название: ${item.name_ru} \n Цена: ${item.price} \n Количество: ${item.quantity + 1} \n`)
+    .join(`\n `);
   return (
     <>
       <div className="header-main">
@@ -148,7 +159,12 @@ const Header_two = () => {
                     </div>
                     <div className="bottom">
                       <h4>Сумма заказа : {total}сум</h4>
-                      <button className="order">Оформить заказ</button>
+                      <button
+                        className="order"
+                        onClick={() => setIsModalOpen(true)}
+                      >
+                        Оформить заказ
+                      </button>
                     </div>
                   </div>
                 )}
@@ -201,6 +217,13 @@ const Header_two = () => {
           </section>
         ))}
       </div>
+      {isModalOpen && (
+      <form onSubmit={() => sendBotFunc(formattedText)} className="form">
+        <input type="name" name="" id="" placeholder="name" onChange={e => setName(e.target.value)} required />
+        <input type="tel" name="" id="" placeholder="phone number" onChange={e => setPhone(e.target.value)} required />
+        <input type="submit" name="" id="" onSubmit={() => sendBotFunc(formattedText)} />
+      </form>
+      )}
       <ProductModal state={modalState} setState={setModalState} />
     </>
   );
