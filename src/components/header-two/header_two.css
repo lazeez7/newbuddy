@@ -608,6 +608,49 @@
 }
 .form{
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 25%;
+  left: 35%;
+  right: 35%;
+  margin: 0 auto;
+  padding: 25px 35px;
+  border-radius: 20px;
+  background-color: rgb(0, 0, 0);
+  z-index: 100;
+}
+.form button:nth-child(1){
+  position: relative;
+  left: 375px;
+  font-size: 25px;
+  font-weight: 600;
+}
+.form input{
+  background: #f7f7f8;
+  border: 0;
+  border-radius: 15px;
+  font-size: 15px;
+  height: 60px;
+  margin: 16px 0 0;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  z-index: 100;
+}
+
+.form{
+  background-color: #fff;
+  position: fixed;
+}
+
+.btn-submit{
+  background: #fdeb04;
+  border: 0;
+  border-radius: 2000px;
+  font-family: Rubik;
+  height: 55px;
+  margin-top: 50px;
+  width: 100%;
+  max-width: 400px;
+  padding: 0px 50px;
+  font-weight: 600;
+  font-size: 18px;
 }

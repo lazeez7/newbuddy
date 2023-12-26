@@ -59,10 +59,25 @@ const Header_two = () => {
   let total = 0;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [name, setName] = useState("")
-  const [phone, setPhone] = useState(Number)
+  const [phone, setPhone] = useState(0)
   const formattedText = `Имя: ${name} \n Номер: ${phone} \n` + items
-    .map((item) => `Название: ${item.name_ru} \n Цена: ${item.price} \n Количество: ${item.quantity + 1} \n`)
+    .map((item) => `Название: ${item.name_ru} \n Цена: ${item.price} \n Количество: ${item.quantity} \n`)
     .join(`\n `);
+    useEffect(()=> {
+      if(isOpen === false){
+        setIsModalOpen(false)
+      }
+    },[isOpen])
+    const handleSendFunc = () => {
+      if (name === "") {
+        alert("Malumotlarni To`ldiring")
+      }else if(phone === 0){
+        alert("Malumotlarni toldirmagansiz")
+      }
+      else{
+        sendBotFunc(formattedText)
+      }
+    }
   return (
     <>
       <div className="header-main">
@@ -136,15 +151,15 @@ const Header_two = () => {
                               <div className="plus">
                                 <button
                                   onClick={() =>
-                                    updateItemQuantity(el.id, el.count++)
+                                    updateItemQuantity(el.id,el.quantity + 1)
                                   }
                                 >
                                   +
                                 </button>
-                                <h3>{el.count}</h3>
+                                <h3>{el.quantity}</h3>
                                 <button
                                   onClick={() =>
-                                    updateItemQuantity(el.id, el.count--)
+                                    updateItemQuantity(el.id,el.quantity - 1)
                                   }
                                 >
                                   -
@@ -218,10 +233,11 @@ const Header_two = () => {
         ))}
       </div>
       {isModalOpen && (
-      <form onSubmit={() => sendBotFunc(formattedText)} className="form">
-        <input type="name" name="" id="" placeholder="name" onChange={e => setName(e.target.value)} required />
-        <input type="tel" name="" id="" placeholder="phone number" onChange={e => setPhone(e.target.value)} required />
-        <input type="submit" name="" id="" onSubmit={() => sendBotFunc(formattedText)} />
+      <form onSubmit={() => handleSendFunc()} className="form">
+        <button onClick={() => setIsModalOpen(false)}>x</button>
+        <input type="name" name="" id="" placeholder="имя" onChange={e => setName(e.target.value)} required />
+        <input type="tel" name="" id="" placeholder="Номер Телефона" onChange={e => setPhone(e.target.value)} required />
+        <button onClick={() => handleSendFunc()} className="btn-submit">Отправить</button>
       </form>
       )}
       <ProductModal state={modalState} setState={setModalState} />
