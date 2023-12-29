@@ -56,3 +56,18 @@ button{
 
   box-shadow: 1px 1px 20px 15px rgba(0, 0, 0, 0.5);
 }
+
+
+@media (max-width: 480px) {
+  .css-jyw67u{
+    width: 340px !important;
+
+  }
+
+  .btn-submit{
+    color: #000;
+  }
+
+  
+}
+
