@@ -43,6 +43,7 @@ const Header_two = () => {
   const [categories, setCategories] = useState([]);
   const [modalState, setModalState] = useState({});
   const [sms, setSms] = useState(0);
+  const [address, setAddress] = useState('');
 
   useEffect(() => {
     if (isOpen) {
@@ -80,14 +81,14 @@ const Header_two = () => {
     await axios
       .get(
         `https://api.telegram.org/bot6796361084:AAH_DLJvZ_TRvl-W2vbxLMNfRbljuc_itTw/sendMessage?chat_id=-4058297029&text=${encodeURIComponent(
-          `Имя: ${curUser.user_name}\nНомер: ${curUser.phone}\n\n` +
+          `Имя: ${curUser.user_name}\nНомер: ${curUser.phone}\nАдрес: ${address}\n\n` +
             items
               .map(
                 (item) =>
-                  `Название: ${item.name_ru}\nЦена: ${item.price}\nКоличество: ${item.quantity}`,
+                  `Название: ${item.name_ru}\nЦена: ${item.price}\nКоличество: ${item.quantity}`
               )
-              .join(`\n\n`),
-        )}&parse_mode=MarkdownV2`,
+              .join(`\n\n`)
+        )}&parse_mode=MarkdownV2`
       )
       .then(() => {
         emptyCart();
@@ -317,6 +318,12 @@ const Header_two = () => {
                 type='number'
                 placeholder='Код'
                 onChange={(event) => setSms(event.target.value)}
+                required
+              />
+              <input
+                type='text'
+                placeholder='Адрес'
+                onChange={(event) => setAddress(event.target.value)}
                 required
               />
               <button type='submit' className='btn-submit'>
